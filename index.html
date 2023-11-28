@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<link rel="shortcut icon" href="images/favicon.png"/>
+<meta charset="utf-8" />
+<title>主页</title>
+<link href="styles/reset.css" type="text/css" rel="stylesheet" />
+<link href="styles/style.css" type="text/css" rel="stylesheet" />
+<link href="styles/inner.css" type="text/css" rel="stylesheet" />
+<link href="styles/prettyPhoto.css" rel="stylesheet"  type="text/css" media="screen" title="prettyPhoto" />
+<!--[if IE]> <script src="js/html5.js"></script>
+<![endif]-->
+<!-- ////////////////////////////////// -->
+<!-- //      Javascript Files        // -->
+<!-- ////////////////////////////////// -->
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="js/hoverIntent.js"></script> 
+<script type="text/javascript" src="js/superfish.js"></script> 
+<script type="text/javascript" src="js/supersubs.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="js/fade.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	//=================================== MAIN MENU ===================================//
+	jQuery("ul.sf-menu").supersubs({ 
+	minWidth		: 12,		// requires em unit.
+	maxWidth		: 14,		// requires em unit.
+	extraWidth		: 3	// extra width can ensure lines don't sometimes turn over due to slight browser differences in how they round-off values
+						   // due to slight rounding differences and font-family 
+	}).superfish();  // call supersubs first, then superfish, so that subs are 
+					 // not display:none when measuring. Call before initialising 
+					 // containing tabs for same reason.
+	
+	//=================================== SLIDESHOW ===================================//
+	jQuery('#slideshow').cycle({
+		timeout: 5000,  // milliseconds between slide transitions (0 to disable auto advance)
+		fx:      'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...     
+		pager:   '#slidernav',  // selector for element to use as pager container
+		pause:   0,	  // true to enable "pause on hover"
+		cleartype:     !$.support.opacity,  // true if clearType corrections should be applied (for IE)
+		cleartypeNoBg: true, // set to true to disable extra cleartype fixing (leave false to force background color setting on slides)  
+		pauseOnPagerHover: 0 // true to pause when hovering over pager link
+	});
+
+					 
+	//=================================== PRETTYPHOTO ===================================//
+	jQuery('a[data-rel]').each(function() {jQuery(this).attr('rel', jQuery(this).data('rel'));});
+	jQuery("a[rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',theme:'facebook',slideshow:2000});
+					 
+});
+</script>
+</head>
+
+<body>
+<div id="bodychild">
+	<div id="outercontainer">
+    	
+        <!-- HEADER -->
+        <div id="outerheader">
+            <header id="top">
+            	<div id="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+                <section id="navigation">
+                    <nav>
+                        <ul id="topnav" class="sf-menu">
+<li class="current"><a href="index.html">主页</a></li>
+                            <li><a href="about.html">关于我们</a>
+                            <li><a href="（contact）.html">加入我们</a></li>
+                            <li><a href="#">鸣谢</a></li>
+                        </ul><!-- topnav -->
+                    </nav><!-- nav -->	
+                    <div class="clear"></div>
+                </section>
+                <div class="clear"></div>
+            </header>
+        </div>
+        <!-- END HEADER -->
+        
+        
+        <!-- SLIDER -->
+        <div id="outerslider">
+        	<div id="slidercontainer">
+            	<div id="bgslider"></div>
+            	<section id="slider">
+                    <ul id="slideshow">
+                    	<li>
+                            <div class="slide-img"><img src="" alt=""></div>
+                            <div class="slide-text">
+                            	<hgroup>
+                                    <h1>欢迎来到 <span class="colortext">Hiouk</span> 工作室</h1>
+                                    <h4>欢迎合作以及加入我们</h4>
+                                </hgroup>
+                                <p>我们能够以建立快品牌为核心,将这一切以及更多的要素与环节加以整合、融通.</p>
+                                <a href="#" class="buttoncolor"><span class="buttontext">了解更多</span><span class="buttonsep"></span></a>
+                            </div>
+                        </li>
+                    	<li>
+                        	<div class="slide-img"><img src="" alt=""></div>
+                            <div class="slide-text">
+                            	<hgroup>
+                                    <h1>在线编程的 <span class="colortext">全新变革</span></h1>
+                                    <h4>领先的平台服务商。 </h4>
+                                </hgroup>
+                                
+                                <a href="#" class="buttoncolor"><span class="buttontext">了解更多</span><span class="buttonsep"></span></a>
+                            </div>
+                        </li>
+                    	<li>
+                        	<div class="slide-img"><img src="" alt=""></div>
+                            <div class="slide-text">
+                                <h1>高效赢取<br/>最大回报 <span class="colortext"> </span></h1>
+                                <p>让我们一起进步，获取最高荣誉</p>
+                                <a href="#" class="buttoncolor"><span class="buttontext">了解更多</span><span class="buttonsep"></span></a>
+                            </div>
+                        </li>
+                    </ul>
+                   <div id="slidernav"></div>
+                </section>
+            </div>
+        </div>
+        <!-- END SLIDER -->
+        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >Website Template</a></div>
+        <!-- BEFORE CONTENT -->
+        <div id="outerbeforecontent">
+        	<div id="beforecontent">
+            	<section id="beforethecontent">
+                	<article id="beforethecontent-colleft">
+                    	<h2>关于我们</h2>
+                        
+                        <p>为加强Hiouk工作室的竞争，我们先后发布了3+以上的优质作品。</p>
+                    </article>
+                	<article id="beforethecontent-colright">
+                    	<div class="quote">
+                        <p><strong>我们这里没有天才                        </strong></p>
+                        <p><strong>我们都是出身平凡的草根                          </strong></p>
+                        <p><strong>但我们有一定要做NO.1的理想和抱负</strong></p>
+                        <span class="qname colortext">~ BlueSEO</span>
+                        </div>
+                    </article>
+                    <div class="clear"></div>
+                </section>
+            </div>
+        </div>
+        <!-- END BEFORE CONTENT -->
+        
+        <!-- MAIN CONTENT -->
+        <div id="outermain">
+        	<section id="maincontent">
+                <h2>最新作品</h2>
+                <div id="ts-display-portfolio" class="shortcode">
+                    <ul id="ts-display-pf-col-4">
+                        <li>
+                            <div class="ts-display-pf-img">
+                                <a class="image" href="images/content/pf/pf4_1.jpg" data-rel="prettyPhoto[mixed]" >
+                                <span class="rollover"></span>
+                                <img src="images/content/pf/pf4_1.jpg" alt="" /></a>
+                            </div>
+                            <div class="ts-display-pf-text">
+                                <h2 class="posttitle"><a href="#">作品1</a></h2>
+                                <p>这这里可以填写一个简单的介绍</p>
+                            </div>
+                            <div class="ts-display-clear"></div>
+                        </li>
+                        <li>
+                            <div class="ts-display-pf-img">
+                                <a class="image" href="images/content/pf/pf4_2.jpg" data-rel="prettyPhoto[mixed]" >
+                                <span class="rollover"></span>
+                                <img src="images/content/pf/pf4_2.jpg" alt="" /></a>
+                            </div>
+                            <div class="ts-display-pf-text">
+                                <h2 class="posttitle"><a href="#">作品2</a></h2>
+                                <p>这这里可以填写一个简单的介绍</p>	
+                            </div>
+                            <div class="ts-display-clear"></div>
+                        </li>
+                        <li>
+                            <div class="ts-display-pf-img">
+                                <a class="image" href="images/content/pf/pf4_3.jpg" data-rel="prettyPhoto[mixed]" >
+                                <span class="rollover"></span>
+                                <img src="images/content/pf/pf4_3.jpg" alt="" /></a>
+                            </div>
+                            <div class="ts-display-pf-text">
+                                <h2 class="posttitle"><a href="#">作品3</a></h2>
+                                <p>这这里可以填写一个简单的介绍</p>	
+                            </div>
+                            <div class="ts-display-clear"></div>
+                        </li>
+                        <li class="nomargin">
+                            <div class="ts-display-pf-img">
+                                <a class="image" href="images/content/pf/pf4_4.jpg" data-rel="prettyPhoto[mixed]" >
+                                <span class="rollover"></span>
+                                <img src="images/content/pf/pf4_4.jpg" alt="" /></a>
+                            </div>
+                            <div class="ts-display-pf-text">
+                                <h2 class="posttitle"><a href="#">作品4</a></h2>
+                                <p>这这里可以填写一个简单的介绍</p>
+                            </div>
+                            <div class="ts-display-clear"></div>
+                        </li>
+                    </ul>
+                </div><!-- end ts-display-portfolio -->
+                
+                <div class="separator line"><div></div></div>
+                
+                <article id="welcome">
+                    <h1>立志于成为全社区领先的<span class="colortext">编程</span>工作室</h1>
+                    <p>我们倡导创新、勤奋、专业、务实、诚信、感恩的精神和"高境界做人，专业化做事"的文化，为创新提供宽容的氛围，形成高境界、"大企业，无边界"的协同文化，为我们理想价值的实现提供文化动力。</p>
+                    <a href="#" class="buttoncolor"><span class="buttontext">订阅Hiouk</span><span class="buttonsep"></span></a> <span class="largetext middletext">获取联系方式</span>
+				</article>
+                <div class="clear"></div>
+            </section>
+        </div>
+        <!-- END MAIN CONTENT -->
+        
+        
+        <!-- FOOTER SIDEBAR -->
+        

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<link rel="shortcut icon" href="images/favicon.png" />
+<meta charset="utf-8" />
+<title>关于我们</title>
+<link href="styles/reset.css" type="text/css" rel="stylesheet" />
+<link href="styles/style.css" type="text/css" rel="stylesheet" />
+<link href="styles/inner.css" rel="stylesheet" type="text/css" />
+<!--[if IE]> <script src="js/html5.js"></script>
+<![endif]-->
+<!-- ////////////////////////////////// -->
+<!-- //      Javascript Files        // -->
+<!-- ////////////////////////////////// -->
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="js/hoverIntent.js"></script> 
+<script type="text/javascript" src="js/superfish.js"></script> 
+<script type="text/javascript" src="js/supersubs.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	//=================================== MAIN MENU ===================================//
+	jQuery("ul.sf-menu").supersubs({ 
+	minWidth		: 12,		// requires em unit.
+	maxWidth		: 14,		// requires em unit.
+	extraWidth		: 3	// extra width can ensure lines don't sometimes turn over due to slight browser differences in how they round-off values
+						   // due to slight rounding differences and font-family 
+	}).superfish();  // call supersubs first, then superfish, so that subs are 
+					 // not display:none when measuring. Call before initialising 
+					 // containing tabs for same reason.
+					 
+	//=================================== TABS ===================================//
+	//jQuery tab
+	jQuery(".tab-content").hide(); //Hide all content
+	jQuery("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	jQuery(".tab-content:first").show(); //Show first tab content
+	//On Click Event
+	jQuery("ul.tabs li").click(function() {
+		jQuery("ul.tabs li").removeClass("active"); //Remove any "active" class
+		jQuery(this).addClass("active"); //Add "active" class to selected tab
+		jQuery(".tab-content").hide(); //Hide all tab content
+		var activeTab = jQuery(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+		jQuery(activeTab).fadeIn(200); //Fade in the active content
+		return false;
+	});
+	
+});
+</script>
+</head>
+
+<body>
+<div id="bodychild">
+	<div id="outercontainer">
+    	
+        <!-- HEADER -->
+        <div id="outerheader">
+            <header id="top">
+            	<div id="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+                <section id="navigation">
+                    <nav>
+                        <ul id="topnav" class="sf-menu">
+                            <li class="current"><a href="index.html">主页</a></li>
+                            <li><a href="about.html">关于我们</a>
+                            <li><a href="（contact）">加入我们</a></li>
+                            <li><a href="#">鸣谢</a></li>
+                        </ul><!-- topnav -->
+                    </nav><!-- nav -->	
+                    <div class="clear"></div>
+                </section>
+                <div class="clear"></div>
+            </header>
+        </div>
+        <!-- END HEADER -->
+                
+
+        
+        <!-- BEFORE CONTENT -->
+        <div id="outerbeforecontent" class="inner">
+        	<div id="beforecontent">
+            	<section id="beforethecontent">
+                	<h1 class="pagetitle">想要深入的了解 <span class="colortext">Hiouk工作室?</span></h1>
+                    <div class="pagedesc">我们创立于2021年，工作室文化悠久，基础设施非常完善</div>
+                </section>
+            </div>
+        </div>
+        <!-- END BEFORE CONTENT -->
+        
+        <!-- MAIN CONTENT -->
+        <div id="outermain">
+        	<section id="maincontent">
+            	<div class="two_third firstcols">
+                	<h2>为什么选择Hiouk？</h2>
+                    <p>这很简单，你可以在这里实现你的梦想！</p>
+                    <div class="tabcontainer">
+                        <ul class="tabs">
+                            <li><a href="#tab0">实力</a><span class="tab-arrow"></span></li>
+                            <li><a href="#tab1">专业</a><span class="tab-arrow"></span></li>
+                            <li><a href="#tab2">技能</a><span class="tab-arrow"></span></li>
+                        </ul>
+                        <div id="tab-body">
+                            <div id="tab0" class="tab-content">
+                            <p>在多个领域活动伟大成就。</p>
+                            </div>
+                            <div id="tab1" class="tab-content">
+                            工作室专有服务器，为成员提供优质编程环境。
+                            </div>
+                            <div id="tab2" class="tab-content">
+                            <p>驻点办公、自助工具，帮助工作室培养自己的团队。</p>
+                            </div>
+                        </div>
+                    </div><!-- end tab container -->
+                </div>
+                <div class="one_third lastcols"><br/><br/><br/><img src="images/content/pic1.jpg" alt="" /></div>
+                
+                
+                <div class="separator line"><div></div></div>
+                
+                <div class="one_third firstcols">
+                	<h2>发展目标</h2>
+                    <p> 我们一直坚持自己的核心价值，我们坚信，成功需要我们坚持，需要我们努力。</p>
+                    <ul class="checklist">
+                    	<li>网页设计</li>
+                        <li>程序定制开发</li>
+                        <li>代码引擎优化</li>
+                        <li>域名服务</li>
+                    </ul>
+                </div>
+                <div class="one_third">
+                	<h2>实力团队</h2>
+                    <ul class="nolist">
+                    	<li>
+                            <img src="images/content/people.jpg" alt="" class="imgborder alignleft" />
+                            <span class="smalltitle colortext">Hagkiest</span>
+                            <span>今合集团创始人，Hiouk工作室现任室长</span>
+                        </li>
+                    	<li>
+                            <img src="images/content/RL.png" alt="" class="imgborder alignleft" />
+                            <span class="smalltitle colortext">Rotion Louis</span>
+                            <span>Hiouk工作室现任副室长，Hydro团队领导者</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="one_third lastcols">
+                	<h2>联系我们</h2>
+                    暂无内容<br/>
+                    
+                    <hr class="small"/>
+                    
+            
+                    
+                </div>
+                
+                
+                <div class="clear"></div>
+            </section>
+        </div>
+        <!-- END MAIN CONTENT -->
+        
+        
+        <!-- FOOTER SIDEBAR -->
+        <div id="outerfootersidebar">
+        	<div id="footersidebarcontainer">
+            	<footer id="footersidebar">
+                
+            	<div id="footcol1" class="footcol">
+				<ul>
+					
+                </ul>
+                </div>
+            	<div id="footcol2"  class="footcol">
+                	<ul>
+                    	<li class="widget-container">
+                        	<h2 class="widget-title">走进我们</h2>                            <ul>
+                                 <li><a href="about.html">关于我们</a></li>
+                                <li><a href="service.html">加入我们</a></li>
+                                <li><a href="contact.html">联系方式</a></li>
+                                <li><a href="#">官方博客</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            	<div id="footcol3"  class="footcol">
+                	<ul>
+                    	<li class="widget-container">
+                        	<h2 class="widget-title">最新发布</h2>                            <ul>
+                                <li><a href="#">IMusic正式发布！</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            	<div id="footcol4" class="footcol">
+				<ul>
+					<li class="widget-container">
+                        <h2 class="widget-title">联系方式</h2>
+                        <p>无<br/>
+                        <br/>
+                        <br/>
+                        </p>
+                        <div id="sn">
+                        </p>
+                        <div id="sn">
+                        	
+                        </div> 
+                    </li>
+                </ul>
+                </div>
+                <div class="clear"></div>
+                
+                </footer>
+            </div>
+        </div>
+        <!-- END FOOTER SIDEBAR -->
+        
+        <!-- FOOTER -->
+        <div id="outerfooter">
+        	<div id="footercontainer">
+            	<footer id="footer">Copyright &copy; 2023. Hiouk工作室<a href="https://world.xiaomawang.com/w/studio-home/13078" target="_blank">跳转至我们</a></footer>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+        
+        
+    </div>
+</div>
+
+
+</body>
+</html>
